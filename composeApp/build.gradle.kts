@@ -1,8 +1,8 @@
+import com.codingfeline.buildkonfig.compiler.FieldSpec
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import java.util.*
-import com.codingfeline.buildkonfig.compiler.FieldSpec
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
@@ -79,7 +79,7 @@ kotlin {
             implementation(libs.coil.compose.core)
             implementation(libs.coil.compose)
             implementation(libs.coil.mp)
-            implementation(libs.coil.network.ktor)
+            implementation(libs.coil.network.ktor3)
 
             // Room + Sqlite
             implementation(libs.androidx.room.runtime)
@@ -118,6 +118,9 @@ kotlin {
 
             // Ktor
             implementation(libs.ktor.client.darwin)
+        }
+        dependencies {
+            ksp(libs.androidx.room.compiler)
         }
     }
 }
@@ -160,22 +163,6 @@ android {
 }
 room {
     schemaDirectory("$projectDir/schemas")
-}
-dependencies {
-    //    ksp(libs.androidx.room.compiler)
-
-//    add("kspAndroid", libs.androidx.room.compiler)
-//    add("kspIosSimulatorArm64", libs.androidx.room.compiler)
-//    add("kspIosX64", libs.androidx.room.compiler)
-//    add("kspIosArm64", libs.androidx.room.compiler)
-//
-    // Room
-    add("kspCommonMainMetadata", libs.androidx.room.compiler)
-}
-tasks.withType<org.jetbrains.kotlin.gradle.dsl.KotlinCompile<*>>().configureEach {
-    if (name != "kspCommonMainKotlinMetadata" ) {
-        dependsOn("kspCommonMainKotlinMetadata")
-    }
 }
 compose.desktop {
     application {

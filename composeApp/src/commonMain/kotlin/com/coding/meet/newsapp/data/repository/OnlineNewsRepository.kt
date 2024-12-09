@@ -4,8 +4,9 @@ import com.coding.meet.newsapp.BuildKonfig.API_KEY
 import io.ktor.client.*
 import io.ktor.client.request.*
 import io.ktor.client.statement.*
+
 class OnlineNewsRepository(
-    private val networkModule : HttpClient
+    private val networkModule: HttpClient
 ) {
 
     suspend fun getNews(category: String): HttpResponse {

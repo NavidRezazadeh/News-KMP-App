@@ -13,13 +13,14 @@ import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.launch
 
 class BookmarkViewModel(
-    private val localNewsRepository : LocalNewsRepository
+    private val localNewsRepository: LocalNewsRepository
 ) : ViewModel() {
 
     private val _bookmarkNewsStateFlow =
         MutableStateFlow<Resource<List<Article>>>(Resource.Loading)
     val bookmarkNewsStateFlow: StateFlow<Resource<List<Article>>>
         get() = _bookmarkNewsStateFlow
+
     init {
         getArticles()
     }

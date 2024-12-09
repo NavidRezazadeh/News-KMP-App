@@ -1,20 +1,22 @@
 package com.coding.meet.newsapp.ui.navigation
 
+import kotlinx.serialization.Serializable
 
-object Graph {
-    const val MainScreenGraph = "mainScreenGraph"
-}
+sealed interface Route {
 
-sealed class MainRouteScreen(var route: String) {
+    @Serializable
+    data object Headline : Route
 
-    object Headline : MainRouteScreen("headline")
-    object Search : MainRouteScreen("search")
-    object Bookmark : MainRouteScreen("bookmark")
-}
-sealed class NewsRouteScreen(var route: String) {
-    object NewsDetail : NewsRouteScreen("newsDetail")
-}
+    @Serializable
+    data object Search : Route
 
-sealed class SettingRouteScreen(var route: String) {
-    object SettingDetail : SettingRouteScreen("settingDetail")
+    @Serializable
+    data object Bookmark : Route
+
+    @Serializable
+    data object NewsDetail : Route
+
+    @Serializable
+    data object SettingDetail : Route
+
 }

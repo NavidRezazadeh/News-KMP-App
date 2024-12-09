@@ -10,7 +10,7 @@ import androidx.navigation.NavController
 import com.coding.meet.newsapp.data.model.Article
 import com.coding.meet.newsapp.theme.cardMinSize
 import com.coding.meet.newsapp.theme.mediumPadding
-import com.coding.meet.newsapp.ui.navigation.NewsRouteScreen
+import com.coding.meet.newsapp.ui.navigation.Route
 import com.coding.meet.newsapp.utils.randomUUIDStr
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
@@ -36,7 +36,7 @@ fun ArticleListScreen(
                 rootNavController.currentBackStackEntry?.savedStateHandle?.apply {
                     set("article", articleStr)
                 }
-                rootNavController.navigate(NewsRouteScreen.NewsDetail.route)
+                rootNavController.navigate(Route.NewsDetail)
             })
         }
     }

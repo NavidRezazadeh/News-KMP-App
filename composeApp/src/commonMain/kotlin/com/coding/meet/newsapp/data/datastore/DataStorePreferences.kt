@@ -13,6 +13,7 @@ expect fun dataStorePreferences(): DataStore<Preferences>
 
 object AppSettings {
     private lateinit var dataStore: DataStore<Preferences>
+
     @OptIn(InternalCoroutinesApi::class)
     private val lock = SynchronizedObject()
 

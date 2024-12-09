@@ -36,10 +36,11 @@ fun ThemeSelectionDialog(
                     style = MaterialTheme.typography.titleMedium,
                     modifier = Modifier.padding(xSmallPadding)
                 )
-                Theme.entries.forEach { theme->
+                Theme.entries.forEach { theme ->
                     Row(
                         modifier = Modifier.fillMaxWidth().clickable {
-                            currentSelectedTheme = theme},
+                            currentSelectedTheme = theme
+                        },
                         horizontalArrangement = Arrangement.Start,
                         verticalAlignment = Alignment.CenterVertically
                     ) {

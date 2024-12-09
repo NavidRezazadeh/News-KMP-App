@@ -8,8 +8,8 @@ import androidx.compose.ui.unit.Dp
 import com.coding.meet.newsapp.data.model.Article
 import com.coding.meet.newsapp.data.model.NewsResponse
 import com.coding.meet.newsapp.data.model.Source
-import com.coding.meet.newsapp.ui.navigation.MainRouteScreen
 import com.coding.meet.newsapp.ui.navigation.NavigationItem
+import com.coding.meet.newsapp.ui.navigation.Route
 import news_kmp_app.composeapp.generated.resources.*
 import org.jetbrains.compose.resources.StringResource
 import kotlin.random.Random
@@ -24,35 +24,39 @@ val categoryList = arrayListOf(
     "Health",
     "Science",
     "Sports",
-    "Technology")
+    "Technology"
+)
 val navigationItemsLists = listOf(
     NavigationItem(
         icon = Res.drawable.ic_headline,
         title = Res.string.headlines,
-        route = MainRouteScreen.Headline.route,
+        route = Route.Headline
     ),
     NavigationItem(
         icon = Res.drawable.ic_search,
         title = Res.string.search,
-        route = MainRouteScreen.Search.route,
+        route = Route.Search,
     ),
     NavigationItem(
         icon = Res.drawable.ic_bookmark_outlined,
         title = Res.string.bookmark,
-        route = MainRouteScreen.Bookmark.route,
+        route = Route.Bookmark,
     ),
 )
+
 enum class Theme(val title: StringResource) {
     SYSTEM_DEFAULT(Res.string.system_default),
     LIGHT_MODE(Res.string.light_mode),
     DARK_MODE(Res.string.dark_mode)
 }
+
 enum class Type {
-   Mobile, Desktop
+    Mobile, Desktop
 }
+
 data class Size(
     val width: Dp,
-    val height :Dp
+    val height: Dp
 )
 
 val articles: List<Article> = listOf(

@@ -1,4 +1,5 @@
 package com.coding.meet.newsapp.ui.navigation
+
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
@@ -17,8 +18,10 @@ fun NewsBottomNavigation(
         modifier = Modifier.fillMaxWidth(),
     ) {
         items.forEach { navigationItem ->
+            val isSelected = navigationItem.route::class.qualifiedName == currentRoute
+
             NavigationBarItem(
-                selected = currentRoute == navigationItem.route,
+                selected = isSelected,
                 onClick = { onItemClick(navigationItem) },
                 icon = {
                     Icon(
@@ -29,7 +32,7 @@ fun NewsBottomNavigation(
                 label = {
                     Text(
                         text = stringResource(navigationItem.title),
-                        style = if (navigationItem.route == currentRoute) MaterialTheme.typography.labelLarge
+                        style = if (isSelected) MaterialTheme.typography.labelLarge
                         else MaterialTheme.typography.labelMedium,
                         maxLines = 1,
                         overflow = TextOverflow.Ellipsis

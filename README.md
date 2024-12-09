@@ -26,8 +26,8 @@ on each platform.
 * Declarative UI with Jetpack Compose
     * Shared UI components across Android and desktop.
     * Material Design and Material Design 3 support.
-* Smooth Navigation & State Management:
-    * Simple navigation using Jetpack Compose Navigation.
+* Type-Safe Navigation & State Management:
+  * Type-Safe navigation using Jetpack Compose Navigation.
 * MVVM Architecture:
     * Model-View-ViewModel pattern for separation of concerns.
     * ViewModel management for UI-related data.
@@ -54,8 +54,8 @@ on each platform.
   layer over SQLite to allow for more robust database access while harnessing the full power of SQLite.
 - [DataStore](https://developer.android.com/kotlin/multiplatform/datastore) - The DataStore library stores data
   asynchronously, consistently, and transactionally, overcoming some of the drawbacks of SharedPreferences
-- [Navigation](https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-navigation-routing.html) Navigation is a
-  key part of UI applications that allows users to move between different application screens.
+- [Navigation](https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-navigation-routing.html) - Navigation is
+  a key part of UI applications that allows users to move between different application screens.
 - [kotlinx.coroutines](https://github.com/Kotlin/kotlinx.coroutines) - Library support for Kotlin coroutines with
   multiplatform support.
 - [Common ViewModel](https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-viewmodel.html) The Android

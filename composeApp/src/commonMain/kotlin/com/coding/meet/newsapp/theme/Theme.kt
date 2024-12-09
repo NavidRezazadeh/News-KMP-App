@@ -39,9 +39,11 @@ fun NewsAppTheme(
         Theme.LIGHT_MODE.name -> {
             LightColorScheme
         }
+
         Theme.DARK_MODE.name -> {
             DarkColorScheme
         }
+
         else -> {
             if (darkTheme) {
                 DarkColorScheme

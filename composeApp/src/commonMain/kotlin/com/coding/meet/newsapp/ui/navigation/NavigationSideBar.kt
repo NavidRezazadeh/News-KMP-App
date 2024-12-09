@@ -21,6 +21,8 @@ fun NavigationSideBar(
         containerColor = MaterialTheme.colorScheme.surface,
     ) {
         items.forEach { navigationItem ->
+            val isSelected = navigationItem.route::class.qualifiedName == currentRoute
+
             NavigationRailItem(
                 modifier = Modifier.padding(vertical = smallPadding),
                 icon = {
@@ -32,13 +34,13 @@ fun NavigationSideBar(
                 label = {
                     Text(
                         text = stringResource(navigationItem.title),
-                        style = if (navigationItem.route == currentRoute) MaterialTheme.typography.labelLarge
+                        style = if (isSelected) MaterialTheme.typography.labelLarge
                         else MaterialTheme.typography.labelMedium,
                         maxLines = 1,
                         overflow = TextOverflow.Ellipsis
                     )
                 },
-                selected = navigationItem.route == currentRoute,
+                selected = isSelected,
                 onClick = { onItemClick(navigationItem) }
             )
         }

@@ -15,7 +15,7 @@ import com.coding.meet.newsapp.theme.xSmallPadding
 import com.coding.meet.newsapp.ui.common.ArticleListScreen
 import com.coding.meet.newsapp.ui.common.EmptyContent
 import com.coding.meet.newsapp.ui.common.ShimmerEffect
-import com.coding.meet.newsapp.ui.navigation.SettingRouteScreen
+import com.coding.meet.newsapp.ui.navigation.Route
 import com.coding.meet.newsapp.ui.search.components.SearchBar
 import com.coding.meet.newsapp.utils.navigationItemsLists
 import news_kmp_app.composeapp.generated.resources.Res
@@ -36,10 +36,11 @@ fun SearchScreen(
     val originDirection = LocalLayoutDirection.current
 
     Column(
-        modifier =  Modifier.fillMaxSize().padding(
+        modifier = Modifier.fillMaxSize().padding(
             start = paddingValues.calculateStartPadding(originDirection),
             end = paddingValues.calculateEndPadding(originDirection),
-            bottom = paddingValues.calculateBottomPadding()),
+            bottom = paddingValues.calculateBottomPadding()
+        ),
         verticalArrangement = Arrangement.spacedBy(xSmallPadding)
     ) {
         TopAppBar(title = {
@@ -51,7 +52,7 @@ fun SearchScreen(
             )
         }, actions = {
             IconButton(onClick = {
-                rootNavController.navigate(SettingRouteScreen.SettingDetail.route)
+                rootNavController.navigate(Route.SettingDetail)
             }) {
                 Icon(
                     imageVector = Icons.Filled.Settings,

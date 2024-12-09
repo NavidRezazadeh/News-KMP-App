@@ -14,7 +14,7 @@ import androidx.navigation.NavController
 import com.coding.meet.newsapp.ui.common.ArticleListScreen
 import com.coding.meet.newsapp.ui.common.EmptyContent
 import com.coding.meet.newsapp.ui.common.ShimmerEffect
-import com.coding.meet.newsapp.ui.navigation.SettingRouteScreen
+import com.coding.meet.newsapp.ui.navigation.Route
 import com.coding.meet.newsapp.utils.navigationItemsLists
 import news_kmp_app.composeapp.generated.resources.Res
 import news_kmp_app.composeapp.generated.resources.ic_browse
@@ -28,12 +28,12 @@ fun BookmarkScreen(
     rootNavController: NavController,
     paddingValues: PaddingValues
 ) {
-    val bookmarkViewModel = koinViewModel<com.coding.meet.newsapp.ui.bookmark.BookmarkViewModel>()
+    val bookmarkViewModel = koinViewModel<BookmarkViewModel>()
 
     val uiState by bookmarkViewModel.bookmarkNewsStateFlow.collectAsState()
     val originDirection = LocalLayoutDirection.current
     Column(
-        modifier =  Modifier.fillMaxSize().padding(
+        modifier = Modifier.fillMaxSize().padding(
             start = paddingValues.calculateStartPadding(originDirection),
             end = paddingValues.calculateEndPadding(originDirection),
             bottom = paddingValues.calculateBottomPadding(),
@@ -48,7 +48,7 @@ fun BookmarkScreen(
             )
         }, actions = {
             IconButton(onClick = {
-                rootNavController.navigate(SettingRouteScreen.SettingDetail.route)
+                rootNavController.navigate(Route.SettingDetail)
             }) {
                 Icon(
                     imageVector = Icons.Filled.Settings,

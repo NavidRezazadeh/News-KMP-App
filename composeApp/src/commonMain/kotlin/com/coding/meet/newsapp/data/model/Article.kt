@@ -17,7 +17,7 @@ data class Article(
     val description: String?,
     @SerialName("publishedAt")
     @PrimaryKey(autoGenerate = false)
-    @ColumnInfo(name="articleId")
+    @ColumnInfo(name = "articleId")
     val publishedAt: String,
     @SerialName("source")
     val source: Source,

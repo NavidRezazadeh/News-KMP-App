@@ -26,7 +26,7 @@ fun EmptyContent(
     message: String,
     icon: DrawableResource,
     isOnRetryBtnVisible: Boolean = true,
-    onRetryClick: (() -> Unit) = {  }
+    onRetryClick: (() -> Unit) = { }
 ) {
     Column(
         modifier = Modifier.fillMaxSize(),

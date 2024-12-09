@@ -16,6 +16,7 @@ class LocalNewsRepository(
     suspend fun deleteArticle(article: Article) {
         newsDao.delete(article)
     }
+
     suspend fun deleteAllBookmark() {
         newsDao.deleteAllBookmark()
     }

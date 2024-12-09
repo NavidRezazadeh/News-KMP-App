@@ -14,7 +14,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         installSplashScreen()
         super.onCreate(savedInstanceState)
-        setActivityProvider {  this }
+        setActivityProvider { this }
         setContent {
             enableEdgeToEdge(
                 SystemBarStyle.dark(MaterialTheme.colorScheme.onSurface.toArgb()),

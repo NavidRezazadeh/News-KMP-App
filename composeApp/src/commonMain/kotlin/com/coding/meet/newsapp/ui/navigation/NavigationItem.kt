@@ -6,5 +6,5 @@ import org.jetbrains.compose.resources.StringResource
 data class NavigationItem(
     val icon: DrawableResource,
     val title: StringResource,
-    val route : String
+    val route: Route
 )

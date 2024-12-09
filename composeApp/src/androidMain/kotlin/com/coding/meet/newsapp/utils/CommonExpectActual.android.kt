@@ -21,13 +21,15 @@ actual fun shareLink(url: String) {
     val shareIntent = Intent.createChooser(sendIntent, "Share Link")
     activityProvider.invoke().startActivity(shareIntent)
 }
-private var activityProvider : () -> Activity = {
+
+private var activityProvider: () -> Activity = {
     throw IllegalArgumentException("Error")
 }
 
-fun setActivityProvider(provider :() -> Activity){
+fun setActivityProvider(provider: () -> Activity) {
     activityProvider = provider
 }
+
 actual fun randomUUIDStr(): String {
     return UUID.randomUUID().toString()
 }

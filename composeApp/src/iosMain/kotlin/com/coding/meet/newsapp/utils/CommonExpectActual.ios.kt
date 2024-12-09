@@ -44,6 +44,6 @@ actual fun getDatabaseBuilder(): RoomDatabase.Builder<NewsDatabase> {
     val dbFilePath = NSHomeDirectory() + "/$DB_Name"
     return Room.databaseBuilder<NewsDatabase>(
         name = dbFilePath,
-        factory =  { NewsDatabase::class.instantiateImpl() }
+        factory = { NewsDatabase::class.instantiateImpl() }
     )
 }

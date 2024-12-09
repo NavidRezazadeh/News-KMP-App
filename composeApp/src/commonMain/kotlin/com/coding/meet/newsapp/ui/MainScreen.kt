@@ -19,7 +19,7 @@ import androidx.navigation.compose.rememberNavController
 import com.coding.meet.newsapp.ui.navigation.NavigationItem
 import com.coding.meet.newsapp.ui.navigation.NavigationSideBar
 import com.coding.meet.newsapp.ui.navigation.NewsBottomNavigation
-import com.coding.meet.newsapp.ui.navigation.graphs.RootNavGraph
+import com.coding.meet.newsapp.ui.navigation.graphs.NavGraph
 import com.coding.meet.newsapp.ui.setting.SettingViewModel
 import com.coding.meet.newsapp.utils.navigationItemsLists
 
@@ -41,7 +41,9 @@ fun MainScreen(settingViewModel: SettingViewModel) {
     }
     val navigationItem by remember {
         derivedStateOf {
-            navigationItemsLists.find { it.route == currentRoute }
+            navigationItemsLists.find {
+                it.route::class.qualifiedName == currentRoute
+            }
         }
     }
     val isMainScreenVisible by remember(isMediumExpandedWWSC) {
@@ -99,7 +101,7 @@ fun MainScaffold(
 ) {
     Row {
         AnimatedVisibility(
-            modifier = Modifier.background( MaterialTheme.colorScheme.surface),
+            modifier = Modifier.background(MaterialTheme.colorScheme.surface),
             visible = isMediumExpandedWWSC && isMainScreenVisible,
             enter = slideInHorizontally(
                 // Slide in from the left
@@ -131,7 +133,8 @@ fun MainScaffold(
                         targetOffsetY = { fullHeight -> fullHeight }
                     )
                 ) {
-                    NewsBottomNavigation(items = navigationItemsLists,
+                    NewsBottomNavigation(
+                        items = navigationItemsLists,
                         currentRoute = currentRoute,
                         onItemClick = { currentNavigationItem ->
                             onItemClick(currentNavigationItem)
@@ -140,7 +143,7 @@ fun MainScaffold(
                 }
             }
         ) { innerPadding ->
-            RootNavGraph(
+            NavGraph(
                 rootNavController = rootNavController,
                 innerPadding = innerPadding,
                 settingViewModel = settingViewModel

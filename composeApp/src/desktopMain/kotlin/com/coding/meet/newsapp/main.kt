@@ -15,10 +15,10 @@ fun main() = application {
     Window(
         onCloseRequest = ::exitApplication, state = WindowState(
             position = WindowPosition(Alignment.Center)
-        ),   title = "News KMP APP",
+        ), title = "News KMP APP",
         icon = org.jetbrains.compose.resources.painterResource(Res.drawable.logo)
     ) {
-        window.minimumSize = Dimension( 640, 480)
+        window.minimumSize = Dimension(640, 480)
         App()
     }
 }

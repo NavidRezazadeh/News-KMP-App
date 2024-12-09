@@ -18,7 +18,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
 class SearchViewModel(
-    private val onlineNewsRepository : OnlineNewsRepository
+    private val onlineNewsRepository: OnlineNewsRepository
 ) : ViewModel() {
 
 

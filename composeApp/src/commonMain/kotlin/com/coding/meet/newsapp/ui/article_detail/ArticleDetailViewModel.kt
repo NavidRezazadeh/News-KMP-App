@@ -12,7 +12,7 @@ import kotlinx.coroutines.IO
 import kotlinx.coroutines.launch
 
 class ArticleDetailViewModel(
-    private val localNewsRepository : LocalNewsRepository
+    private val localNewsRepository: LocalNewsRepository
 ) : ViewModel() {
 
     var isBookmarked by mutableStateOf(false)

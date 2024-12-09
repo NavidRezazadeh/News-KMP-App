@@ -18,7 +18,7 @@ import com.coding.meet.newsapp.theme.xSmallPadding
 import com.coding.meet.newsapp.ui.common.ArticleListScreen
 import com.coding.meet.newsapp.ui.common.EmptyContent
 import com.coding.meet.newsapp.ui.common.ShimmerEffect
-import com.coding.meet.newsapp.ui.navigation.SettingRouteScreen
+import com.coding.meet.newsapp.ui.navigation.Route
 import com.coding.meet.newsapp.utils.categoryList
 import com.coding.meet.newsapp.utils.navigationItemsLists
 import news_kmp_app.composeapp.generated.resources.Res
@@ -54,7 +54,7 @@ fun HeadlineScreen(
             )
         }, actions = {
             IconButton(onClick = {
-                rootNavController.navigate(SettingRouteScreen.SettingDetail.route)
+                rootNavController.navigate(Route.SettingDetail)
             }) {
                 Icon(
                     imageVector = Icons.Filled.Settings,

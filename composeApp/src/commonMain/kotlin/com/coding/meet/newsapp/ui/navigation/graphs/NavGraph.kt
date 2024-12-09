@@ -7,9 +7,10 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.coding.meet.newsapp.data.model.Article
 import com.coding.meet.newsapp.ui.article_detail.ArticleDetailScreen
-import com.coding.meet.newsapp.ui.navigation.Graph
-import com.coding.meet.newsapp.ui.navigation.NewsRouteScreen
-import com.coding.meet.newsapp.ui.navigation.SettingRouteScreen
+import com.coding.meet.newsapp.ui.bookmark.BookmarkScreen
+import com.coding.meet.newsapp.ui.headline.HeadlineScreen
+import com.coding.meet.newsapp.ui.navigation.Route
+import com.coding.meet.newsapp.ui.search.SearchScreen
 import com.coding.meet.newsapp.ui.setting.SettingScreen
 import com.coding.meet.newsapp.ui.setting.SettingViewModel
 import kotlinx.serialization.json.Json
@@ -18,27 +19,31 @@ import kotlinx.serialization.json.Json
  * Created 28-02-2024 at 03:04 pm
  */
 @Composable
-fun RootNavGraph(
+fun NavGraph(
     rootNavController: NavHostController,
     innerPadding: PaddingValues,
     settingViewModel: SettingViewModel
 ) {
     NavHost(
         navController = rootNavController,
-        startDestination = Graph.MainScreenGraph,
+        startDestination = Route.Headline,
     ) {
-        mainNavGraph(rootNavController = rootNavController, innerPadding = innerPadding)
-        composable(
-            route = NewsRouteScreen.NewsDetail.route,
-        ) {
+        composable<Route.Headline> {
+            HeadlineScreen(rootNavController = rootNavController, paddingValues = innerPadding)
+        }
+        composable<Route.Search> {
+            SearchScreen(rootNavController = rootNavController, paddingValues = innerPadding)
+        }
+        composable<Route.Bookmark> {
+            BookmarkScreen(rootNavController = rootNavController, paddingValues = innerPadding)
+        }
+        composable<Route.NewsDetail> {
             rootNavController.previousBackStackEntry?.savedStateHandle?.get<String>("article")?.let { article ->
                 val currentArticle: Article = Json.decodeFromString(article)
                 ArticleDetailScreen(rootNavController, currentArticle)
             }
         }
-        composable(
-            route = SettingRouteScreen.SettingDetail.route,
-        ) {
+        composable<Route.SettingDetail> {
             SettingScreen(navController = rootNavController, settingViewModel)
         }
     }

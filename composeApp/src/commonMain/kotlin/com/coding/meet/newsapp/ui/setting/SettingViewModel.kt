@@ -13,7 +13,7 @@ import kotlinx.coroutines.runBlocking
 
 class SettingViewModel(
     private val appPreferences: AppPreferences,
-    private val localNewsRepository : LocalNewsRepository
+    private val localNewsRepository: LocalNewsRepository
 ) : ViewModel() {
 
     private val _currentTheme: MutableStateFlow<String?> = MutableStateFlow(null)

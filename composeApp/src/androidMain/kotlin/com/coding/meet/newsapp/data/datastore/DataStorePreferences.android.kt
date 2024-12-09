@@ -8,7 +8,7 @@ import org.koin.mp.KoinPlatform
 
 actual fun dataStorePreferences(): DataStore<Preferences> {
     val appContext = KoinPlatform.getKoin().get<Application>()
-     return AppSettings.getDataStore(
+    return AppSettings.getDataStore(
         producePath = {
             appContext.filesDir
                 .resolve(dataStoreFileName)

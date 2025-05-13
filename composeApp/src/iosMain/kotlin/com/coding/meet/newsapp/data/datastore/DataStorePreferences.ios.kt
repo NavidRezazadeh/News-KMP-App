@@ -11,6 +11,7 @@ import platform.Foundation.NSFileManager
 import platform.Foundation.NSURL
 import platform.Foundation.NSUserDomainMask
 
+@OptIn(ExperimentalForeignApi::class)
 actual fun dataStorePreferences(): DataStore<Preferences> {
     return AppSettings.getDataStore(
         producePath = {

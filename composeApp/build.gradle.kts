@@ -166,7 +166,7 @@ room {
 }
 compose.desktop {
     application {
-        mainClass = "MainKt"
+        mainClass = "com.coding.meet.newsapp.MainKt"
 
         nativeDistributions {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)

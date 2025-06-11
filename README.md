@@ -6,9 +6,12 @@ Click the image above to watch a demo of the News Kotlin Multiplatform App on Yo
 
 ## Overview
 
-The News KMP App is a Kotlin Compose Multiplatform (KMP) project that aims to provide a consistent news reading
-experience across multiple platforms, including Android, iOS, Windows, macOS, and Linux. This project leverages Kotlin's
-multiplatform capabilities to share code and logic while using Compose for UI, ensuring a seamless and native experience
+The News KMP App is a Kotlin Compose Multiplatform (KMP) project that aims to provide a consistent
+news reading
+experience across multiple platforms, including Android, iOS, Windows, macOS, and Linux. This
+project leverages Kotlin's
+multiplatform capabilities to share code and logic while using Compose for UI, ensuring a seamless
+and native experience
 on each platform.
 
 ## Features & Technologies:
@@ -27,7 +30,7 @@ on each platform.
     * Shared UI components across Android and desktop.
     * Material Design and Material Design 3 support.
 * Type-Safe Navigation & State Management:
-  * Type-Safe navigation using Jetpack Compose Navigation.
+    * Type-Safe navigation using Jetpack Compose Navigation.
 * MVVM Architecture:
     * Model-View-ViewModel pattern for separation of concerns.
     * ViewModel management for UI-related data.
@@ -41,26 +44,39 @@ on each platform.
     * Key-value pair storage with DataStore.
 * Build Configuration Management:
     * Centralized build configurations using BuildKonfig.
+* Compose Hot reload:
+    * Compose compiler plugin for hot reload.
 
 ## Libraries 🛠️
 
-- [BuildKonfig](https://github.com/yshrsmz/BuildKonfig) - BuildConfig for Kotlin Multiplatform Project. It currently
+- [BuildKonfig](https://github.com/yshrsmz/BuildKonfig) - BuildConfig for Kotlin Multiplatform
+  Project. It currently
   supports embedding values from gradle file.
-- [Ktor](https://ktor.io/docs/http-client-multiplatform.html) - Provides multiplatform libraries required to make
+- [Ktor](https://ktor.io/docs/http-client-multiplatform.html) - Provides multiplatform libraries
+  required to make
   network calls to the REST API.
-- [Kermit](https://github.com/touchlab/Kermit) - Kermit by Touchlab is a Kotlin Multiplatform centralized logging
+- [Kermit](https://github.com/touchlab/Kermit) - Kermit by Touchlab is a Kotlin Multiplatform
+  centralized logging
   utility.
-- [Room](https://developer.android.com/kotlin/multiplatform/room) - The Room persistence library provides an abstraction
-  layer over SQLite to allow for more robust database access while harnessing the full power of SQLite.
-- [DataStore](https://developer.android.com/kotlin/multiplatform/datastore) - The DataStore library stores data
-  asynchronously, consistently, and transactionally, overcoming some of the drawbacks of SharedPreferences
-- [Navigation](https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-navigation-routing.html) - Navigation is
+- [Room](https://developer.android.com/kotlin/multiplatform/room) - The Room persistence library
+  provides an abstraction
+  layer over SQLite to allow for more robust database access while harnessing the full power of
+  SQLite.
+- [DataStore](https://developer.android.com/kotlin/multiplatform/datastore) - The DataStore library
+  stores data
+  asynchronously, consistently, and transactionally, overcoming some of the drawbacks of
+  SharedPreferences
+- [Navigation](https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-navigation-routing.html) -
+  Navigation is
   a key part of UI applications that allows users to move between different application screens.
-- [kotlinx.coroutines](https://github.com/Kotlin/kotlinx.coroutines) - Library support for Kotlin coroutines with
+- [kotlinx.coroutines](https://github.com/Kotlin/kotlinx.coroutines) - Library support for Kotlin
+  coroutines with
   multiplatform support.
-- [Common ViewModel](https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-viewmodel.html) The Android
+- [Common ViewModel](https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-viewmodel.html)
+  The Android
   ViewModel approach to building UI can be implemented in common code using Compose Multiplatform.
-- [kotlinx.serialization](https://github.com/Kotlin/kotlinx.serialization) - Provides sets of libraries for various
+- [kotlinx.serialization](https://github.com/Kotlin/kotlinx.serialization) - Provides sets of
+  libraries for various
   serialization formats eg. JSON, protocol buffers, CBOR etc.
 
 ## Getting Started
@@ -83,13 +99,16 @@ API_KEY=YOUR_API_KEY
 
 ### Run the app on your device or emulator:
 
-- For Android, run the `composeApp` module by selecting the `app` configuration. If you need help with the
+- For Android, run the `composeApp` module by selecting the `app` configuration. If you need help
+  with the
   configuration, follow this link
   for [android](https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-multiplatform-create-first-app.html#run-your-application-on-android)
-- For iOS, run the `composeApp` module by selecting the `iosApp` configuration. If you need help with the configuration,
+- For iOS, run the `composeApp` module by selecting the `iosApp` configuration. If you need help
+  with the configuration,
   follow this link
   for [Ios](https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-multiplatform-create-first-app.html#run-your-application-on-ios)
 - For Desktop, run `./gradlew :composeApp:run`
+- For Desktop with hot reload, run `./gradlew desktopRun -DmainClass=com.coding.meet.newsapp.MainKt`
 
 ## Screenshot 💻
 
@@ -191,7 +210,8 @@ API_KEY=YOUR_API_KEY
 
 ## Contributing 🤝
 
-Feel free to contribute to this project by submitting issues, pull requests, or providing valuable feedback. Your
+Feel free to contribute to this project by submitting issues, pull requests, or providing valuable
+feedback. Your
 contributions are always welcome! 🙌
 
 ## ❤ Show your support

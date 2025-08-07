@@ -5,8 +5,6 @@ import androidx.activity.ComponentActivity
 import androidx.activity.SystemBarStyle
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.ui.graphics.toArgb
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.coding.meet.newsapp.utils.setActivityProvider
 
@@ -17,8 +15,8 @@ class MainActivity : ComponentActivity() {
         setActivityProvider { this }
         setContent {
             enableEdgeToEdge(
-                SystemBarStyle.dark(MaterialTheme.colorScheme.onSurface.toArgb()),
-                SystemBarStyle.dark(MaterialTheme.colorScheme.onSurface.toArgb()),
+                statusBarStyle = SystemBarStyle.light(0, 0),
+                navigationBarStyle = SystemBarStyle.auto(0, 0),
             )
             App()
         }

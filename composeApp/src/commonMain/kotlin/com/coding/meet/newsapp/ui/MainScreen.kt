@@ -1,8 +1,13 @@
 package com.coding.meet.newsapp.ui
 
-import androidx.compose.animation.*
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.slideInHorizontally
+import androidx.compose.animation.slideInVertically
+import androidx.compose.animation.slideOutHorizontally
+import androidx.compose.animation.slideOutVertically
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.windowsizeclass.ExperimentalMaterial3WindowSizeClassApi
@@ -141,7 +146,8 @@ fun MainScaffold(
                         }
                     )
                 }
-            }
+            },
+            modifier = Modifier.systemBarsPadding()
         ) { innerPadding ->
             NavGraph(
                 rootNavController = rootNavController,
